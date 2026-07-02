@@ -1,0 +1,37 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/assets/edurithm-finance-logo.svg b/assets/edurithm-finance-logo.svg
+new file mode 100644
+index 0000000000000000000000000000000000000000..de39547b6fd5f7f6a1e413ee0f3d4c282e447774
+--- /dev/null
++++ b/assets/edurithm-finance-logo.svg
+@@ -0,0 +1,27 @@
++<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
++  <title id="title">Edurithm Finance logo</title>
++  <desc id="desc">A blue gradient academic finance mark with rising chart bars and an upward arrow.</desc>
++  <defs>
++    <linearGradient id="blueGradient" x1="72" y1="102" x2="244" y2="239" gradientUnits="userSpaceOnUse">
++      <stop stop-color="#5DC9E8"/>
++      <stop offset="0.55" stop-color="#3AA9E7"/>
++      <stop offset="1" stop-color="#4D6DEB"/>
++    </linearGradient>
++    <linearGradient id="barGradient" x1="139" y1="93" x2="198" y2="129" gradientUnits="userSpaceOnUse">
++      <stop stop-color="#ffffff"/>
++      <stop offset="1" stop-color="#326FEA"/>
++    </linearGradient>
++    <filter id="softShadow" x="43" y="54" width="234" height="215" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
++      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#020617" flood-opacity="0.22"/>
++    </filter>
++  </defs>
++  <g filter="url(#softShadow)">
++    <path d="M75 111.9C75 105.2 82.9 101.6 88 106L137.1 148.4C141.6 152.3 141.1 159.4 136.1 162.6L119 173.7C99.7 186.2 75 172.3 75 149.3V111.9Z" fill="url(#blueGradient)"/>
++    <path d="M146.4 190.7L176 171.9L220.3 207.8C225.3 211.9 224.9 219.6 219.4 223.1L174.5 251.7C167 256.5 157.1 255.2 151.1 248.6L115.7 209.6C113.4 207 115.6 203.1 119 203.7C128.4 205.2 138 200.5 146.4 190.7Z" fill="url(#blueGradient)"/>
++    <path d="M96 195C120.8 203.3 141.3 193.9 157.6 170.5L198.1 126.2L182.8 112.5C179.5 109.6 181.4 104.1 185.8 103.7L250.4 98.2C254.4 97.9 257.6 101.3 257.1 105.3L249.1 168.7C248.5 173 243.2 174.7 240.4 171.5L224.3 153.8L164.7 213.2C149.4 228.5 125 229.4 108.6 215.3L94.4 203C90.9 200 91.7 193.6 96 195Z" fill="#ffffff"/>
++    <path d="M142.5 127.5V149.5" stroke="url(#barGradient)" stroke-width="7" stroke-linecap="round"/>
++    <path d="M160 102.5V156.5" stroke="url(#barGradient)" stroke-width="7" stroke-linecap="round"/>
++    <path d="M178.5 85V137.5" stroke="url(#barGradient)" stroke-width="7" stroke-linecap="round"/>
++    <path d="M197 73V125" stroke="url(#barGradient)" stroke-width="7" stroke-linecap="round"/>
++  </g>
++</svg>
+ 
+EOF
+)
