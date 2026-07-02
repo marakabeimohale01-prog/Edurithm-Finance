@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edurithm Finance – Financing Dreams. Empowering Futures.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue-50: #E6F1FB;
+    --blue-100: #B5D4F4;
+    --blue-400: #378ADD;
+    --blue-600: #185FA5;
+    --blue-800: #0C447C;
+    --blue-900: #042C53;
+    --teal-50: #E1F5EE;
+    --teal-400: #1D9E75;
+    --teal-600: #0F6E56;
+    --gray-50: #F8F9FA;
+    --gray-100: #F1F3F5;
+    --gray-200: #E9ECEF;
+    --gray-400: #888780;
+    --gray-600: #5F5E5A;
+    --gray-800: #2C2C2A;
+    --white: #ffffff;
+    --accent: #2563EB;
+    --accent-light: #DBEAFE;
+    --accent-dark: #1D4ED8;
+    --text-dark: #0F172A;
+    --text-mid: #334155;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 32px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue-800);
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+
+  .nav-brand span {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-mid);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-dark) !important; color: #fff !important; }
+
+  .nav-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+  }
+
+  .nav-mobile-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 50%, var(--blue-600) 100%);
+    display: flex;
+    align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(55, 138, 221, 0.15);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(29, 158, 117, 0.10);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #93C5FD;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #34D399;
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #60A5FA;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: var(--blue-800);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--blue-50);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.7);
+  }
+
+  /* Hero stats */
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .hero-stat-num {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* Hero card */
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+  }
+
+  .hero-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .loan-amount-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .loan-amount-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+  }
+
+  .loan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .loan-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .loan-feature-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(52, 211, 153, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .loan-feature-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: #34D399;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .hero-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  .whatsapp-dot {
+    width: 10px;
+    height: 10px;
+    background: #25D366;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 90px 5%; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .value-card {
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+  }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .value-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .value-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+
+  .value-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .about-visual {
+    background: linear-gradient(135deg, var(--blue-50) 0%, #EEF2FF 100%);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    border: 1px solid var(--blue-100);
+  }
+
+  .about-visual-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--blue-800);
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .about-mission-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+  }
+
+  /* ─── LOAN PRODUCTS ─── */
+  .products-bg {
+    background: var(--gray-50);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .products-header .section-sub {
+    margin: 0 auto;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    position: relative;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .product-card.featured {
+    border-color: var(--accent);
+    border-width: 2px;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .product-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .product-name {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .product-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+
+  .product-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .product-detail-label { color: var(--text-muted); }
+  .product-detail-value { font-weight: 600; color: var(--text-dark); }
+
+  /* ─── HOW IT WORKS ─── */
+  .how-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .how-header .section-sub { margin: 0 auto; }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(12.5% + 20px);
+    right: calc(12.5% + 20px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--teal-400));
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 0 6px var(--accent-light);
+  }
+
+  .step-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── LOAN CALCULATOR ─── */
+  .calc-bg {
+    background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  }
+
+  .calc-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .calc-left .section-title { color: #fff; }
+  .calc-left .section-sub { color: rgba(255,255,255,0.65); }
+  .calc-left .section-tag { background: rgba(255,255,255,0.12); color: #93C5FD; }
+
+  .calc-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+  }
+
+  .calc-field {
+    margin-bottom: 24px;
+  }
+
+  .calc-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .calc-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #60A5FA;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.2);
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .calc-results {
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .calc-result-item {
+    background: rgba(255,255,255,0.06);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+  }
+
+  .calc-result-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 6px;
+  }
+
+  .calc-result-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .calc-cta {
+    display: block;
+    text-align: center;
+    background: #ffffff;
+    color: var(--blue-800);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-top: 24px;
+    transition: background 0.2s;
+  }
+
+  .calc-cta:hover { background: var(--blue-50); }
+
+  /* ─── ELIGIBILITY ─── */
+  .elig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .elig-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .elig-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .elig-check {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #DCFCE7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .elig-check svg {
+    width: 14px;
+    height: 14px;
+    stroke: #16A34A;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .elig-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+  }
+
+  .elig-text p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .elig-info-box {
+    background: linear-gradient(135deg, var(--blue-50), #EEF2FF);
+    border: 1px solid var(--blue-100);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+    font-size: 14px;
+  }
+
+  .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .info-row:first-child { padding-top: 0; }
+
+  .info-key { color: var(--text-muted); font-weight: 500; }
+
+  .info-val {
+    font-weight: 700;
+    color: var(--blue-800);
+    text-align: right;
+  }
+
+  /* ─── TEAM ─── */
+  .team-bg { background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .team-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .team-header .section-sub { margin: 0 auto; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .team-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    text-align: center;
+    transition: box-shadow 0.25s;
+  }
+
+  .team-card:hover { box-shadow: var(--shadow-lg); }
+
+  .team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--teal-400));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 auto 16px;
+  }
+
+  .team-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+  }
+
+  .team-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .team-bio {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--gray-50);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .contact-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon-wrap.green { background: #DCFCE7; }
+  .contact-icon-wrap.blue { background: var(--accent-light); }
+  .contact-icon-wrap.purple { background: #EDE9FE; }
+
+  .contact-icon-wrap svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .contact-icon-wrap.green svg { stroke: #16A34A; }
+  .contact-icon-wrap.blue svg { stroke: var(--accent); }
+  .contact-icon-wrap.purple svg { stroke: #7C3AED; }
+
+  .contact-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+
+  .contact-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  /* Contact form */
+  .contact-form {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 7px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--gray-50);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+    background: var(--white);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .form-submit:hover { background: var(--accent-dark); }
+
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 14px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--blue-900);
+    padding: 60px 5% 32px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+
+  .social-btn:hover { background: rgba(255,255,255,0.18); }
+
+  .social-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: rgba(255,255,255,0.7);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: #ffffff; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .footer-bottom-left { color: rgba(255,255,255,0.4); }
+
+  .footer-bottom-right {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+  }
+
+  /* ─── SUCCESS TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--blue-800);
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(120px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .toast-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #34D399;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { order: -1; }
+    .products-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid::before { display: none; }
+    .calc-inner { grid-template-columns: 1fr; }
+    .elig-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .nav-links { display: none; }
+    .nav-mobile-btn { display: flex; }
+    .about-values { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .hero { padding: 100px 5% 60px; }
+    .hero h1 { font-size: 2rem; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="30" fill="#EFF6FF"/>
+      <path d="M20 38 L28 22" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+      <path d="M28 22 L36 30" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+      <path d="M36 30 L44 14" stroke="#1D9E75" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="36" cy="30" r="4" fill="#2563EB"/>
+      <rect x="16" y="38" width="29" height="3" rx="1.5" fill="#CBD5E1"/>
+      <path d="M26 33 L30 29 L34 33" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-brand">
+      EDURITHM
+      <span>Finance</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#loans">Loans</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#eligibility">Eligibility</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact" class="nav-cta">Apply Now</a></li>
+  </ul>
+
+  <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">Student Finance · Maseru, Lesotho</div>
+      <h1>Financing <em>Dreams.</em><br/>Empowering Futures.</h1>
+      <p class="hero-sub">
+        Edurithm Finance bridges the gap between ambition and access for students at Lesotho's institutions of higher learning. Get up to M1,000 — same day approval.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Apply Now
+        </a>
+        <a href="#loans" class="btn-secondary">View Loan Plans</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">M1,000</div>
+          <div class="hero-stat-label">Max Loan</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">Same Day</div>
+          <div class="hero-stat-label">Approval</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">1–3 Mo.</div>
+          <div class="hero-stat-label">Repayment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <p class="hero-card-title">Student Loan — Quick Overview</p>
+      <div class="loan-amount-display">M1,000</div>
+      <p class="loan-amount-sub">Maximum available loan amount</p>
+
+      <div class="loan-features">
+        <div class="loan-feature">
+          <div class="loan-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          Flexible repayment: 1 to 3 months
+        </div>
+        <div class="loan-feature">
+          <div class="loan-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          Same-day approval process
+        </div>
+        <div class="loan-feature">
+          <div class="loan-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          Reduced interest for returning borrowers
+        </div>
+        <div class="loan-feature">
+          <div class="loan-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          Local team — based in Maseru
+        </div>
+      </div>
+
+      <div class="hero-contact-row">
+        <div class="whatsapp-dot"></div>
+        WhatsApp us: &nbsp;<strong style="color:#fff">+266 62676031</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">Built for Students,<br/>By Locals</h2>
+        <p class="section-sub">
+          Edurithm Finance is a locally-driven financial services provider designed to support students from Lesotho's institutions of higher learning. We understand the gap between ambition and access — and we fill it.
+        </p>
+
+        <div class="about-values">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="value-title">Access & Equity</div>
+            <div class="value-desc">Every student deserves education, regardless of financial background.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="value-title">Integrity & Transparency</div>
+            <div class="value-desc">Honest, open financial practices in every student interaction.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="value-title">Empowerment</div>
+            <div class="value-desc">Uplifting students to succeed on their academic journey.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="value-title">Community-Centric</div>
+            <div class="value-desc">Tailored to the unique needs of students in Lesotho.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-visual-logo">
+          <svg width="56" height="56" viewBox="0 0 60 60" fill="none">
+            <path d="M16 40 L26 20" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M26 20 L36 30" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M36 30 L46 12" stroke="#1D9E75" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="36" cy="30" r="5" fill="#2563EB"/>
+            <rect x="12" y="41" width="35" height="4" rx="2" fill="#CBD5E1"/>
+          </svg>
+        </div>
+        <p class="about-quote">"To become the leading catalyst of Lesotho education advancement by providing smart, accessible and sustainable financial solutions."</p>
+        <p class="about-mission-label">Our Vision</p>
+
+        <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(37,99,235,0.12);">
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.65;">
+            Our mission is to provide <strong style="color:var(--blue-800)">innovative, reliable, and student-focused</strong> financial solutions that remove educational barriers, support academic achievement, and invest in the future of Lesotho's youth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOAN PRODUCTS ─── -->
+<section class="products-bg" id="loans">
+  <div class="section-inner">
+    <div class="products-header">
+      <span class="section-tag">Our Products</span>
+      <h2 class="section-title">Loan Plans for Every Student</h2>
+      <p class="section-sub">Choose the repayment period that works for you. The longer you take, the more the interest — but we keep it simple and transparent.</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- 1 Month -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <p class="product-name">Repayment Plan</p>
+        <p class="product-title">1-Month Loan</p>
+        <p class="product-desc">Cover urgent academic expenses fast. The quickest way to borrow — minimal interest, maximum speed.</p>
+        <div class="product-detail">
+          <span class="product-detail-label">Interest Rate</span>
+          <span class="product-detail-value" style="color:var(--accent)">20%</span>
+        </div>
+        <div class="product-detail">
+          <span class="product-detail-label">Loan Range</span>
+          <span class="product-detail-value">M100 – M1,000</span>
+        </div>
+        <div class="product-detail">
+          <span class="product-detail-label">Approval</span>
+          <span class="product-detail-value" style="color:#16A34A">Same Day</span>
+        </div>
+      </div>
+
+      <!-- 2 Month -->
+      <div class="product-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="product-icon" style="background:#EDE9FE">
+          <svg viewBox="0 0 24 24" style="stroke:#7C3AED"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="product-name">Repayment Plan</p>
+        <p class="product-title">2-Month Loan</p>
+        <p class="product-desc">A balanced option for students who need a little breathing room to repay after their sponsorship arrives.</p>
+        <div class="product-detail">
+          <span class="product-detail-label">Interest Rate</span>
+          <span class="product-detail-value" style="color:var(--accent)">25%</span>
+        </div>
+        <div class="product-detail">
+          <span class="product-detail-label">Loan Range</span>
+          <span class="product-detail-value">M100 – M1,000</span>
+        </div>
+        <div class="product-detail">
+          <span class="product-detail-label">Approval</span>
+          <span class="product-detail-value" style="color:#16A34A">Same Day</span>
+        </div>
+      </div>
+
+      <!-- 3 Month -->
+      <div class="product-card">
+        <div class="product-icon" style="background:#DCFCE7">
+          <svg viewBox="0 0 24 24" style="stroke:#16A34A"><path d="M12 2v20M2 12h20"/></svg>
+        </div>
+        <p class="product-name">Repayment Plan</p>
+        <p class="product-title">3-Month Loan</p>
+        <p class="product-desc">Maximum flexibility for students planning over a full semester. Spread costs across three months with ease.</p>
+        <div class="product-detail">
+          <span class="product-detail-label">Interest Rate</span>
+          <span class="product-detail-value" style="color:var(--accent)">30%</span>
+        </div>
+        <div class="product-detail">
+          <span class="product-detail-label">Loan Range</span>
+          <span class="product-detail-value">M100 – M1,000</span>
+        </div>
+        <div class="product-detail">
+          <span class="product-detail-label">Approval</span>
+          <span class="product-detail-value" style="color:#16A34A">Same Day</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px; padding:20px 24px; background:rgba(37,99,235,0.06); border:1px solid rgba(37,99,235,0.15); border-radius:var(--radius-md); display:flex; align-items:center; gap:14px; font-size:14px; color:var(--text-mid);">
+      <svg width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span><strong>Frequent borrower benefit:</strong> Become a returning customer and enjoy reduced interest rates as a loyalty reward.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how">
+  <div class="section-inner">
+    <div class="how-header">
+      <span class="section-tag">Process</span>
+      <h2 class="section-title">Get Your Loan in 4 Simple Steps</h2>
+      <p class="section-sub">We've made borrowing as easy as possible so you can focus on what matters — your studies.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Contact Us</h3>
+        <p class="step-desc">Reach out via WhatsApp or our contact form. Tell us what you need and we'll guide you from there.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Submit Documents</h3>
+        <p class="step-desc">Provide your student ID, institution enrollment proof, and your sponsor's details for assessment.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Same-Day Approval</h3>
+        <p class="step-desc">Our team reviews your application quickly. Most loans are approved the same business day.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Receive Funds</h3>
+        <p class="step-desc">Money is disbursed promptly. Repay within your chosen plan — 1, 2, or 3 months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOAN CALCULATOR ─── -->
+<section class="calc-bg" id="calculator">
+  <div class="calc-inner">
+    <div class="calc-left">
+      <span class="section-tag">Loan Calculator</span>
+      <h2 class="section-title" style="color:#fff">Estimate Your Repayment</h2>
+      <p class="section-sub">Adjust the sliders to see what you'll owe based on your loan amount and repayment period. All amounts in Lesotho Loti (M).</p>
+
+      <div style="margin-top:36px; padding:24px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-md);">
+        <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.7;">
+          <strong style="color:rgba(255,255,255,0.8)">Interest Rates:</strong><br/>
+          1 month → 20% · 2 months → 25% · 3 months → 35%<br/><br/>
+          <strong style="color:rgba(255,255,255,0.8)">Opening Hours:</strong><br/>
+          Monday – Saturday, 9:00 AM – 4:00 PM<br/><br/>
+          <strong style="color:rgba(255,255,255,0.8)">Location:</strong><br/>
+          Maseru, Lesotho
+        </p>
+      </div>
+    </div>
+
+    <div class="calc-card">
+      <div class="calc-field">
+        <div class="calc-label">
+          Loan Amount
+          <span class="calc-value" id="amountDisplay">M500</span>
+        </div>
+        <input type="range" min="100" max="1000" step="50" value="500" id="loanAmount" oninput="calcUpdate()" />
+        <div style="display:flex; justify-content:space-between; font-size:11px; color:rgba(255,255,255,0.3); margin-top:6px;">
+          <span>M100</span><span>M1,000</span>
+        </div>
+      </div>
+
+      <div class="calc-field">
+        <div class="calc-label">
+          Repayment Period
+          <span class="calc-value" id="monthsDisplay">1 Month</span>
+        </div>
+        <input type="range" min="1" max="3" step="1" value="1" id="loanMonths" oninput="calcUpdate()" />
+        <div style="display:flex; justify-content:space-between; font-size:11px; color:rgba(255,255,255,0.3); margin-top:6px;">
+          <span>1 Month</span><span>2 Months</span><span>3 Months</span>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result-item">
+          <div class="calc-result-label">Interest Charged</div>
+          <div class="calc-result-num" id="interestDisplay">M100</div>
+        </div>
+        <div class="calc-result-item">
+          <div class="calc-result-label">Total Repayable</div>
+          <div class="calc-result-num" id="totalDisplay">M600</div>
+        </div>
+        <div class="calc-result-item">
+          <div class="calc-result-label">Interest Rate</div>
+          <div class="calc-result-num" id="rateDisplay">20%</div>
+        </div>
+        <div class="calc-result-item">
+          <div class="calc-result-label">Monthly Payment</div>
+          <div class="calc-result-num" id="monthlyDisplay">M600</div>
+        </div>
+      </div>
+
+      <a href="#contact" class="calc-cta">Apply for This Loan →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ELIGIBILITY ─── -->
+<section id="eligibility">
+  <div class="section-inner">
+    <span class="section-tag">Who Can Apply</span>
+    <h2 class="section-title">Eligibility Requirements</h2>
+    <p class="section-sub">We focus exclusively on students at Lesotho's institutions of higher learning. Here's what you need to qualify.</p>
+
+    <div class="elig-grid">
+      <div class="elig-list">
+        <div class="elig-item">
+          <div class="elig-check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="elig-text">
+            <strong>Enrolled at a local institution</strong>
+            <p>You must be a currently enrolled student at a college or university in Lesotho.</p>
+          </div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="elig-text">
+            <strong>Age 18 – 25 years</strong>
+            <p>Applicants must be between 18 and 25 years old at the time of application.</p>
+          </div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="elig-text">
+            <strong>Active sponsorship / funding</strong>
+            <p>You must have a reliable source of sponsorship from any recognized sponsor provider.</p>
+          </div>
+        </div>
+        <div class="elig-item">
+          <div class="elig-check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="elig-text">
+            <strong>Valid student ID</strong>
+            <p>A current student identification card from your institution is required at application.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="elig-info-box">
+        <h3 style="font-size:16px; font-weight:700; color:var(--blue-800); margin-bottom:20px;">Loan at a Glance</h3>
+        <div class="info-row">
+          <span class="info-key">Minimum Loan</span>
+          <span class="info-val">M100</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Maximum Loan</span>
+          <span class="info-val">M1,000</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Repayment Period</span>
+          <span class="info-val">1 – 3 Months</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">1 Month Interest</span>
+          <span class="info-val">20%</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">2 Month Interest</span>
+          <span class="info-val">25%</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">3 Month Interest</span>
+          <span class="info-val">35%</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Default Rate</span>
+          <span class="info-val">20% – 35%</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Office Hours</span>
+          <span class="info-val">Mon–Sat, 9AM–4PM</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Location</span>
+          <span class="info-val">Maseru, Lesotho</span>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="#contact" class="btn-primary" style="background:var(--accent); color:#fff; display:flex; justify-content:center;">
+            Apply Now — Same Day Approval
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ─── -->
+<section class="team-bg" id="team">
+  <div class="section-inner">
+    <div class="team-header">
+      <span class="section-tag">Our Team</span>
+      <h2 class="section-title">The People Behind Edurithm</h2>
+      <p class="section-sub">Local professionals committed to making student finance transparent, accessible, and empowering.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">MM</div>
+        <h3 class="team-name">Mohale Marakabei</h3>
+        <p class="team-role">Managing Director</p>
+        <div class="team-share">50% Shareholding</div>
+        <p class="team-bio">
+          Mr. Mohale brings on experience from financial background as he is an accountant, graduated from Centre For Accounting Studies. He also has hands-on proven skills in IT services.
+        </p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#1D9E75,#0F6E56)">KR</div>
+        <h3 class="team-name">Kao Reitumetsi</h3>
+        <p class="team-role">Operating Director</p>
+        <div class="team-share">50% Shareholding</div>
+        <p class="team-bio">
+          Mr. Kao co-founded Edurithm Finance with a shared vision of making student lending simple and impactful. As Operating Director, he oversees the day-to-day lending operations and ensures every student interaction reflects the company's values of transparency and empowerment.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:48px; text-align:center;">
+      <div style="display:inline-flex; gap:24px; align-items:center; padding:24px 36px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg);">
+        <div>
+          <div style="font-size:24px; font-weight:800; color:var(--text-dark);">2</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:500; text-transform:uppercase; letter-spacing:0.8px;">Customer Support Staff</div>
+        </div>
+        <div style="width:1px; height:40px; background:var(--border);"></div>
+        <div>
+          <div style="font-size:24px; font-weight:800; color:var(--text-dark);">Mon–Sat</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:500; text-transform:uppercase; letter-spacing:0.8px;">Office Hours</div>
+        </div>
+        <div style="width:1px; height:40px; background:var(--border);"></div>
+        <div>
+          <div style="font-size:24px; font-weight:800; color:var(--text-dark);">Maseru</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:500; text-transform:uppercase; letter-spacing:0.8px;">Headquarters</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Ready to Apply?</h2>
+      <p class="section-sub">Fill in the form or reach us directly via WhatsApp. We aim to respond within the same business day.</p>
+
+      <div class="contact-methods">
+        <div class="contact-item">
+          <div class="contact-icon-wrap green">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">WhatsApp</p>
+            <p class="contact-value">+266 62676031</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap blue">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Location</p>
+            <p class="contact-value">Maseru, Lesotho</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap purple">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Office Hours</p>
+            <p class="contact-value">Monday – Saturday, 9 AM – 4 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3 class="form-title">Loan Application Form</h3>
+
+      <!-- Step indicator -->
+      <div id="formStep1">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" placeholder="e.g. Thabo" id="fname" />
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" placeholder="e.g. Molefe" id="lname" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number (WhatsApp preferred) *</label>
+          <input type="tel" placeholder="+266 XXXXXXXX" id="phone" />
+        </div>
+        <div class="form-group">
+          <label>Email Address (optional)</label>
+          <input type="email" placeholder="e.g. thabo@email.com" id="email" />
+        </div>
+        <div class="form-group">
+          <label>Institution *</label>
+          <input type="text" placeholder="e.g. National University of Lesotho" id="institution" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Loan Amount (M) *</label>
+            <select id="loanAmt">
+              <option value="">Select amount</option>
+              <option>M100 – M250</option>
+              <option>M251 – M500</option>
+              <option>M501 – M750</option>
+              <option>M751 – M1,000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Repayment Period *</label>
+            <select id="repay">
+              <option value="">Select period</option>
+              <option>1 Month (20%)</option>
+              <option>2 Months (25%)</option>
+              <option>3 Months (35%)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Sponsor / Funding Source *</label>
+          <input type="text" placeholder="e.g. NMDS, family, employer" id="sponsor" />
+        </div>
+        <div class="form-group">
+          <label>Brief Note (optional)</label>
+          <textarea placeholder="Tell us what the loan is for or any questions you have..." id="note"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Submit My Application</button>
+        <p class="form-note">* Required fields. Submitting will send your application to our email and open WhatsApp so you can confirm directly with us.</p>
+      </div>
+
+      <!-- Success state -->
+      <div id="formSuccess" style="display:none; text-align:center; padding:40px 20px;">
+        <div style="width:64px;height:64px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="28" height="28" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:700;color:var(--text-dark);margin-bottom:10px;">Application Received!</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:24px;">
+          Your details have been emailed to our team at <strong>mtshepo388@gmail.com</strong>.<br/>
+          A WhatsApp message has also been prepared — please <strong>tap the button below to send it</strong> to complete your application.
+        </p>
+        <a id="whatsappLink" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:15px;font-weight:700;padding:14px 28px;border-radius:8px;text-decoration:none;margin-bottom:16px;">
+          <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Send via WhatsApp
+        </a>
+        <br/>
+        <button onclick="resetForm()" style="background:none;border:none;color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit;">Submit another application</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Edurithm Finance</p>
+        <p class="footer-tagline">Bridging the gap between student ambition and financial access. Locally owned, Maseru-based, student-focused.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/26662676031" class="social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#loans">Loan Products</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#eligibility">Eligibility</a></li>
+          <li><a href="#team">Our Team</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Loan Plans</p>
+        <ul class="footer-links">
+          <li><a href="#loans">1-Month Plan (20%)</a></li>
+          <li><a href="#loans">2-Month Plan (25%)</a></li>
+          <li><a href="#loans">3-Month Plan (35%)</a></li>
+          <li><a href="#loans">Frequent Borrower Rates</a></li>
+          <li><a href="#calculator">Loan Calculator</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/26662676031">+266 62676031</a></li>
+          <li><a href="#contact">Apply Online</a></li>
+          <li><a href="#">Maseru, Lesotho</a></li>
+          <li><a href="#">Mon–Sat, 9AM–4PM</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">© 2025 Edurithm Finance. All rights reserved. · Maseru, Lesotho</p>
+      <p class="footer-bottom-right">Financing Dreams. Empowering Futures.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <div class="toast-icon">
+    <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  Application submitted! We'll contact you via WhatsApp shortly.
+</div>
+
+<script>
+  /* ─── Calculator ─── */
+  function calcUpdate() {
+    var amount = parseInt(document.getElementById('loanAmount').value);
+    var months = parseInt(document.getElementById('loanMonths').value);
+    var rates = {1: 0.20, 2: 0.25, 3: 0.35};
+    var rate = rates[months];
+    var interest = Math.round(amount * rate);
+    var total = amount + interest;
+    var monthly = Math.round(total / months);
+
+    document.getElementById('amountDisplay').textContent = 'M' + amount;
+    document.getElementById('monthsDisplay').textContent = months + (months === 1 ? ' Month' : ' Months');
+    document.getElementById('interestDisplay').textContent = 'M' + interest;
+    document.getElementById('totalDisplay').textContent = 'M' + total;
+    document.getElementById('rateDisplay').textContent = (rate * 100) + '%';
+    document.getElementById('monthlyDisplay').textContent = 'M' + monthly;
+  }
+
+  /* ─── Form Submit — WhatsApp + Email (Formspree) ─── */
+  async function submitForm() {
+    var fname     = document.getElementById('fname').value.trim();
+    var lname     = document.getElementById('lname').value.trim();
+    var phone     = document.getElementById('phone').value.trim();
+    var email     = document.getElementById('email').value.trim();
+    var institution = document.getElementById('institution').value.trim();
+    var loanAmt   = document.getElementById('loanAmt').value;
+    var repay     = document.getElementById('repay').value;
+    var sponsor   = document.getElementById('sponsor').value.trim();
+    var note      = document.getElementById('note').value.trim();
+
+    if (!fname || !phone || !institution || !loanAmt || !repay || !sponsor) {
+      alert('Please fill in all required fields before submitting.');
+      return;
+    }
+
+    var btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    /* 1. Send email via Formspree */
+    try {
+      await fetch('https://formspree.io/f/mlgyojve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'Full Name'       : fname + ' ' + lname,
+          'Phone'           : phone,
+          'Email'           : email || 'Not provided',
+          'Institution'     : institution,
+          'Loan Amount'     : loanAmt,
+          'Repayment Period': repay,
+          'Sponsor'         : sponsor,
+          'Note'            : note || 'None',
+          '_subject'        : 'New Loan Application — ' + fname + ' ' + lname
+        })
+      });
+    } catch(e) {
+      console.warn('Email send failed:', e);
+    }
+
+    /* 2. Open WhatsApp with pre-filled message */
+    var waMsg =
+      'Hello Edurithm Finance 👋\n\n' +
+      'I would like to apply for a student loan.\n\n' +
+      '📋 *Application Details*\n' +
+      '• Name: ' + fname + ' ' + lname + '\n' +
+      '• Phone: ' + phone + '\n' +
+      '• Institution: ' + institution + '\n' +
+      '• Loan Amount: ' + loanAmt + '\n' +
+      '• Repayment Plan: ' + repay + '\n' +
+      '• Sponsor/Funding: ' + sponsor + '\n' +
+      (note ? '• Note: ' + note + '\n' : '') +
+      '\nPlease assist me with the next steps. Thank you!';
+
+    var waURL = 'https://wa.me/26662676031?text=' + encodeURIComponent(waMsg);
+    window.open(waURL, '_blank');
+
+    /* 3. Show success state */
+    document.getElementById('formStep1').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+    btn.textContent = 'Submit My Application';
+    btn.disabled = false;
+  }
+
+  /* ─── Reset form back to blank ─── */
+  function resetForm() {
+    ['fname','lname','phone','email','institution','sponsor','note'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    document.getElementById('loanAmt').value = '';
+    document.getElementById('repay').value = '';
+    document.getElementById('formSuccess').style.display = 'none';
+    document.getElementById('formStep1').style.display = 'block';
+  }
+
+  /* ─── Nav scroll effect ─── */
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('mainNav');
+    if (window.scrollY > 20) {
+      nav.style.boxShadow = '0 2px 24px rgba(0,0,0,0.08)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  /* ─── Mobile menu ─── */
+  function toggleMobileMenu() {
+    var links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '64px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = '#fff';
+      links.style.padding = '16px 5%';
+      links.style.borderBottom = '1px solid #E2E8F0';
+      links.style.gap = '20px';
+      links.style.zIndex = '99';
+    }
+  }
+
+  /* Close mobile menu on link click */
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var links = document.querySelector('.nav-links');
+      if (window.innerWidth < 900) {
+        links.style.display = 'none';
+      }
+    });
+  });
+
+  calcUpdate();
+</script>
+</body>
+</html>
