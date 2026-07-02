@@ -1,0 +1,403 @@
+diff --git a/index.html b/index.html
+index 0758a951b8a35ed9d4c264b56da771928e59bcb9..d65ca6db50cb394e59ae86cc1ce5b16180217222 100644
+--- a/index.html
++++ b/index.html
+@@ -1,31 +1,32 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Edurithm Finance – Financing Dreams. Empowering Futures.</title>
++<link rel="icon" type="image/svg+xml" href="assets/edurithm-finance-logo.svg" />
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+ <style>
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+   :root {
+     --blue-50: #E6F1FB;
+     --blue-100: #B5D4F4;
+     --blue-400: #378ADD;
+     --blue-600: #185FA5;
+     --blue-800: #0C447C;
+     --blue-900: #042C53;
+     --teal-50: #E1F5EE;
+     --teal-400: #1D9E75;
+     --teal-600: #0F6E56;
+     --gray-50: #F8F9FA;
+     --gray-100: #F1F3F5;
+     --gray-200: #E9ECEF;
+     --gray-400: #888780;
+     --gray-600: #5F5E5A;
+     --gray-800: #2C2C2A;
+     --white: #ffffff;
+     --accent: #2563EB;
+     --accent-light: #DBEAFE;
+     --accent-dark: #1D4ED8;
+     --text-dark: #0F172A;
+@@ -52,52 +53,53 @@
+   }
+ 
+   /* ─── NAV ─── */
+   nav {
+     position: fixed;
+     top: 0; left: 0; right: 0;
+     z-index: 100;
+     background: rgba(255,255,255,0.95);
+     backdrop-filter: blur(12px);
+     border-bottom: 1px solid var(--border);
+     padding: 0 5%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     height: 64px;
+   }
+ 
+   .nav-logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     text-decoration: none;
+   }
+ 
+   .nav-logo-icon {
+-    width: 36px;
+-    height: 36px;
++    width: 42px;
++    height: 42px;
++    object-fit: contain;
+   }
+ 
+   .nav-brand {
+     font-size: 15px;
+     font-weight: 700;
+     color: var(--blue-800);
+     letter-spacing: -0.3px;
+     line-height: 1.2;
+   }
+ 
+   .nav-brand span {
+     display: block;
+     font-size: 10px;
+     font-weight: 500;
+     color: var(--accent);
+     letter-spacing: 1.5px;
+     text-transform: uppercase;
+   }
+ 
+   .nav-links {
+     display: flex;
+     align-items: center;
+     gap: 32px;
+     list-style: none;
+   }
+@@ -480,59 +482,66 @@
+     stroke-linejoin: round;
+   }
+ 
+   .value-title {
+     font-size: 14px;
+     font-weight: 700;
+     color: var(--text-dark);
+     margin-bottom: 6px;
+   }
+ 
+   .value-desc {
+     font-size: 13px;
+     color: var(--text-muted);
+     line-height: 1.5;
+   }
+ 
+   .about-visual {
+     background: linear-gradient(135deg, var(--blue-50) 0%, #EEF2FF 100%);
+     border-radius: var(--radius-lg);
+     padding: 40px;
+     text-align: center;
+     border: 1px solid var(--blue-100);
+   }
+ 
+   .about-visual-logo {
+-    width: 100px;
+-    height: 100px;
++    width: 116px;
++    height: 116px;
+     margin: 0 auto 24px;
+     background: var(--white);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: var(--shadow-md);
++    padding: 14px;
++  }
++
++  .about-visual-logo img {
++    width: 100%;
++    height: 100%;
++    object-fit: contain;
+   }
+ 
+   .about-quote {
+     font-family: 'Playfair Display', serif;
+     font-size: 18px;
+     font-style: italic;
+     color: var(--blue-800);
+     line-height: 1.55;
+     margin-bottom: 20px;
+   }
+ 
+   .about-mission-label {
+     font-size: 12px;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 1.2px;
+     color: var(--accent);
+   }
+ 
+   /* ─── LOAN PRODUCTS ─── */
+   .products-bg {
+     background: var(--gray-50);
+     border-top: 1px solid var(--border);
+     border-bottom: 1px solid var(--border);
+   }
+@@ -1132,57 +1141,66 @@
+     font-size: 12px;
+     color: var(--text-muted);
+     margin-top: 14px;
+   }
+ 
+   /* ─── FOOTER ─── */
+   footer {
+     background: var(--blue-900);
+     padding: 60px 5% 32px;
+     color: rgba(255,255,255,0.65);
+   }
+ 
+   .footer-inner {
+     max-width: 1200px;
+     margin: 0 auto;
+   }
+ 
+   .footer-top {
+     display: grid;
+     grid-template-columns: 2fr 1fr 1fr 1fr;
+     gap: 40px;
+     margin-bottom: 48px;
+   }
+ 
+   .footer-brand {
++    display: flex;
++    align-items: center;
++    gap: 12px;
+     font-family: 'Playfair Display', serif;
+     font-size: 20px;
+     font-weight: 800;
+     color: #fff;
+     margin-bottom: 12px;
+   }
+ 
++  .footer-brand img {
++    width: 44px;
++    height: 44px;
++    object-fit: contain;
++  }
++
+   .footer-tagline {
+     font-size: 13px;
+     color: rgba(255,255,255,0.5);
+     line-height: 1.6;
+     margin-bottom: 20px;
+   }
+ 
+   .footer-social {
+     display: flex;
+     gap: 10px;
+   }
+ 
+   .social-btn {
+     width: 36px;
+     height: 36px;
+     border-radius: var(--radius-sm);
+     background: rgba(255,255,255,0.08);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: background 0.2s;
+     text-decoration: none;
+   }
+ 
+   .social-btn:hover { background: rgba(255,255,255,0.18); }
+@@ -1291,59 +1309,51 @@
+     .team-grid { grid-template-columns: 1fr; }
+     .contact-inner { grid-template-columns: 1fr; }
+     .footer-top { grid-template-columns: 1fr 1fr; }
+     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+     .nav-links { display: none; }
+     .nav-mobile-btn { display: flex; }
+     .about-values { grid-template-columns: 1fr; }
+     .form-row { grid-template-columns: 1fr; }
+   }
+ 
+   @media (max-width: 600px) {
+     section { padding: 60px 5%; }
+     .hero { padding: 100px 5% 60px; }
+     .hero h1 { font-size: 2rem; }
+     .steps-grid { grid-template-columns: 1fr; }
+     .footer-top { grid-template-columns: 1fr; }
+     .hero-stats { flex-direction: column; gap: 16px; }
+   }
+ </style>
+ </head>
+ <body>
+ 
+ <!-- ─── NAV ─── -->
+ <nav id="mainNav">
+   <a href="#home" class="nav-logo">
+-    <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+-      <circle cx="30" cy="30" r="30" fill="#EFF6FF"/>
+-      <path d="M20 38 L28 22" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+-      <path d="M28 22 L36 30" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+-      <path d="M36 30 L44 14" stroke="#1D9E75" stroke-width="3" stroke-linecap="round"/>
+-      <circle cx="36" cy="30" r="4" fill="#2563EB"/>
+-      <rect x="16" y="38" width="29" height="3" rx="1.5" fill="#CBD5E1"/>
+-      <path d="M26 33 L30 29 L34 33" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+-    </svg>
++    <img class="nav-logo-icon" src="assets/edurithm-finance-logo.svg" alt="Edurithm Finance logo" />
+     <div class="nav-brand">
+       EDURITHM
+       <span>Finance</span>
+     </div>
+   </a>
+ 
+   <ul class="nav-links">
+     <li><a href="#about">About</a></li>
+     <li><a href="#loans">Loans</a></li>
+     <li><a href="#how">How It Works</a></li>
+     <li><a href="#eligibility">Eligibility</a></li>
+     <li><a href="#team">Team</a></li>
+     <li><a href="#contact" class="nav-cta">Apply Now</a></li>
+   </ul>
+ 
+   <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+     <span></span><span></span><span></span>
+   </button>
+ </nav>
+ 
+ <!-- ─── HERO ─── -->
+ <section class="hero" id="home">
+   <div class="hero-inner">
+     <div class="hero-left">
+       <div class="hero-tag">Student Finance · Maseru, Lesotho</div>
+@@ -1437,57 +1447,51 @@
+             <div class="value-icon">
+               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+             </div>
+             <div class="value-title">Integrity & Transparency</div>
+             <div class="value-desc">Honest, open financial practices in every student interaction.</div>
+           </div>
+           <div class="value-card">
+             <div class="value-icon">
+               <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+             </div>
+             <div class="value-title">Empowerment</div>
+             <div class="value-desc">Uplifting students to succeed on their academic journey.</div>
+           </div>
+           <div class="value-card">
+             <div class="value-icon">
+               <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+             </div>
+             <div class="value-title">Community-Centric</div>
+             <div class="value-desc">Tailored to the unique needs of students in Lesotho.</div>
+           </div>
+         </div>
+       </div>
+ 
+       <div class="about-visual">
+         <div class="about-visual-logo">
+-          <svg width="56" height="56" viewBox="0 0 60 60" fill="none">
+-            <path d="M16 40 L26 20" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+-            <path d="M26 20 L36 30" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+-            <path d="M36 30 L46 12" stroke="#1D9E75" stroke-width="3.5" stroke-linecap="round"/>
+-            <circle cx="36" cy="30" r="5" fill="#2563EB"/>
+-            <rect x="12" y="41" width="35" height="4" rx="2" fill="#CBD5E1"/>
+-          </svg>
++          <img src="assets/edurithm-finance-logo.svg" alt="Edurithm Finance logo" />
+         </div>
+         <p class="about-quote">"To become the leading catalyst of Lesotho education advancement by providing smart, accessible and sustainable financial solutions."</p>
+         <p class="about-mission-label">Our Vision</p>
+ 
+         <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(37,99,235,0.12);">
+           <p style="font-size:14px; color:var(--text-muted); line-height:1.65;">
+             Our mission is to provide <strong style="color:var(--blue-800)">innovative, reliable, and student-focused</strong> financial solutions that remove educational barriers, support academic achievement, and invest in the future of Lesotho's youth.
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ 
+ <!-- ─── LOAN PRODUCTS ─── -->
+ <section class="products-bg" id="loans">
+   <div class="section-inner">
+     <div class="products-header">
+       <span class="section-tag">Our Products</span>
+       <h2 class="section-title">Loan Plans for Every Student</h2>
+       <p class="section-sub">Choose the repayment period that works for you. The longer you take, the more the interest — but we keep it simple and transparent.</p>
+     </div>
+ 
+     <div class="products-grid">
+       <!-- 1 Month -->
+@@ -1915,51 +1919,51 @@
+       <div id="formSuccess" style="display:none; text-align:center; padding:40px 20px;">
+         <div style="width:64px;height:64px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+           <svg width="28" height="28" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+         </div>
+         <h3 style="font-size:20px;font-weight:700;color:var(--text-dark);margin-bottom:10px;">Application Received!</h3>
+         <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:24px;">
+           Your details have been emailed to our team at <strong>mtshepo388@gmail.com</strong>.<br/>
+           A WhatsApp message has also been prepared — please <strong>tap the button below to send it</strong> to complete your application.
+         </p>
+         <a id="whatsappLink" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:15px;font-weight:700;padding:14px 28px;border-radius:8px;text-decoration:none;margin-bottom:16px;">
+           <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+           Send via WhatsApp
+         </a>
+         <br/>
+         <button onclick="resetForm()" style="background:none;border:none;color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:underline;font-family:inherit;">Submit another application</button>
+       </div>
+     </div>
+   </div>
+ </section>
+ 
+ <!-- ─── FOOTER ─── -->
+ <footer>
+   <div class="footer-inner">
+     <div class="footer-top">
+       <div>
+-        <p class="footer-brand">Edurithm Finance</p>
++        <p class="footer-brand"><img src="assets/edurithm-finance-logo.svg" alt="Edurithm Finance logo" />Edurithm Finance</p>
+         <p class="footer-tagline">Bridging the gap between student ambition and financial access. Locally owned, Maseru-based, student-focused.</p>
+         <div class="footer-social">
+           <a href="#" class="social-btn" aria-label="Facebook">
+             <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+           </a>
+           <a href="https://wa.me/26662676031" class="social-btn" aria-label="WhatsApp">
+             <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+           </a>
+         </div>
+       </div>
+ 
+       <div>
+         <p class="footer-col-title">Navigation</p>
+         <ul class="footer-links">
+           <li><a href="#about">About Us</a></li>
+           <li><a href="#loans">Loan Products</a></li>
+           <li><a href="#how">How It Works</a></li>
+           <li><a href="#eligibility">Eligibility</a></li>
+           <li><a href="#team">Our Team</a></li>
+         </ul>
+       </div>
+ 
+       <div>
+         <p class="footer-col-title">Loan Plans</p>
+         <ul class="footer-links">
+   
