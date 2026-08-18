@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Edurithm Finance logo">
+  <defs>
+    <linearGradient id="edurithm-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d9e75"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="42" fill="url(#edurithm-gradient)"/>
+  <rect x="52" y="52" width="296" height="296" rx="32" fill="rgba(255,255,255,0.08)"/>
+  <path d="M126 120h150v34h-116v58h106v33h-106v63h-34v-188z" fill="white"/>
+  <path d="M236 120h76l-76 160h-32l0-55h22l10-29h-72l12-76h50z" fill="#dbeafe" opacity="0.92"/>
+</svg>
