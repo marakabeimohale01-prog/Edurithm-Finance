@@ -1,3 +1,4 @@
+/* existing page.css content up to line 912 (same as repository) */
 :root {
   --blue-900: #042c53;
   --blue-800: #0c447c;
@@ -908,4 +909,56 @@ footer {
   .page-header h1 { font-size: 2.3rem; }
   .page-hero { min-height: 360px; }
   .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* --- Mobile navigation additions --- */
+
+.nav-mobile-btn {
+  display: none; /* shown at mobile sizes below */
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  align-items: center;
+}
+
+.nav-mobile-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+@media (max-width: 900px) {
+  .nav-mobile-btn { display: flex; }
+
+  /* Desktop horizontal nav is hidden by default at this width; we provide a vertical mobile menu */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 5%;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+    z-index: 50;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 10px 0;
+    color: var(--text-dark);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner { position: relative; }
 }
