@@ -809,12 +809,67 @@ footer {
 
 .footer-bottom-left { color: rgba(255,255,255,0.4); }
 
+.footer-bottom-legal {
+  display: flex;
+  gap: 18px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-bottom-legal a:hover { color: #ffffff; }
+
 .footer-bottom-right {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   color: rgba(255,255,255,0.5);
   font-size: 14px;
 }
+
+.legal-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 5% 20px;
+}
+
+.legal-updated {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 36px;
+}
+
+.legal-content h2 {
+  font-size: 1.3rem;
+  margin: 44px 0 14px;
+  color: var(--text-dark);
+}
+
+.legal-content h2:first-of-type { margin-top: 0; }
+
+.legal-content p {
+  color: var(--text-mid);
+  margin-bottom: 14px;
+  line-height: 1.75;
+}
+
+.legal-content .legal-placeholder {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.92em;
+  font-weight: 600;
+}
+
+.legal-contact-box {
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-top: 40px;
+}
+
+.legal-contact-box p { margin-bottom: 8px; }
+.legal-contact-box p:last-child { margin-bottom: 0; }
 
 .eligibility-checker {
   padding-top: 20px;
@@ -957,4 +1012,5 @@ footer {
   .page-hero { min-height: 360px; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-bottom-legal { justify-content: center; }
 }
